@@ -2,6 +2,17 @@
 name = "seorakel"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/ezstyle42/seorakel"
+license = "MIT"
+description = "Desktop dashboard for weekly SEO audit XML reports"
+authors = ["ezstyle42"]
+homepage = "https://github.com/ezstyle42/seorakel"
+
+[package.metadata.wix]
+upgrade-guid = "5F66335D-FC11-44CA-A705-63C812A423B6"
+path-guid = "6E244396-BEAB-4EBF-B3A3-A1EB1D9F89B0"
+license = false
+eula = false
 
 [dependencies]
 anyhow = "1.0.104"
@@ -26,3 +37,8 @@ path = "src/main.rs"
 [profile.release]
 lto = "thin"
 codegen-units = 1
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
