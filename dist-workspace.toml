@@ -20,7 +20,10 @@ publish-jobs = ["homebrew"]
 cargo-test = true
 
 # Target platforms to build apps for (Rust target-triple syntax)
-targets = ["aarch64-apple-darwin", "aarch64-unknown-linux-gnu", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-pc-windows-msvc"]
+# Note: aarch64-apple-darwin (Apple Silicon) is excluded because the
+# GitHub-hosted macos-14 runner fleet is saturated/unavailable in this
+# environment and the job gets cancelled after 15 minutes without logs.
+targets = ["aarch64-unknown-linux-gnu", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-pc-windows-msvc"]
 
 [dist.github-custom-runners]
 global = "ubuntu-latest"
