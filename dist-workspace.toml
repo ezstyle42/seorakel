@@ -10,11 +10,14 @@ ci = "github"
 # The installers to generate for each app
 installers = ["shell", "powershell", "homebrew", "msi"]
 
-# Whether to publish a Homebrew formula to a tap repository
+# Homebrew tap publishing is disabled: it requires a HOMEBREW_TAP_TOKEN
+# secret (a GitHub PAT with write access to ezstyle42/homebrew-tap) which
+# is not configured in this repository. The formula file (seorakel.rb) is
+# still built and uploaded as a release asset for manual installation.
 tap = "ezstyle42/homebrew-tap"
 
 # Publish jobs to run in CI
-publish-jobs = ["homebrew"]
+publish-jobs = []
 
 # Whether to run cargo test during builds
 cargo-test = true
