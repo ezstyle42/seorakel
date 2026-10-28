@@ -1,0 +1,28 @@
+[package]
+name = "seorakel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.104"
+directories = "6.0.0"
+eframe = { version = "0.37.0", default-features = false, features = ["default_fonts", "glow", "persistence", "ron", "wayland", "x11"] }
+egui = "0.37"
+egui_plot = "0.38.0"
+env_logger = "0.11.11"
+log = "0.4.34"
+open = "5.4.5"
+quick-xml = "0.42.0"
+rfd = "0.17.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+[lib]
+name = "seorakel"
+path = "src/lib.rs"
+
+[[bin]]
+name = "seorakel"
+path = "src/main.rs"
+[profile.release]
+lto = "thin"
+codegen-units = 1
